@@ -1,0 +1,16 @@
+version: '2'
+services:
+  gataway:
+     build: ./Gataway
+     container_name: gataway
+     volumes:
+          - /var/run/docker.sock:/tmp/docker.sock:ro
+  zookeeper:
+     build: ./ZooKeeper
+     container_name: zookeeper
+  ordering:
+     build: ./OrderingService
+     links:
+          - zookeeper
+     environment:
+          - VIRTUAL_HOST=ordering

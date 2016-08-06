@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/OrderingProject.iml" filepath="$PROJECT_DIR$/.idea/OrderingProject.iml" />
+      <module fileurl="file://$PROJECT_DIR$/OrderingService/OrderingService.iml" filepath="$PROJECT_DIR$/OrderingService/OrderingService.iml" />
+    </modules>
+  </component>
+</project>
