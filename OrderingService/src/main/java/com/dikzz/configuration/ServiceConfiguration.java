@@ -1,8 +1,11 @@
 package com.dikzz.configuration;
 
 import com.dikzz.configuration.tools.TrackingInterceptor;
+import com.dikzz.service.filter.MyFilter;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.EnableAspectJAutoProxy;
 import org.springframework.http.converter.HttpMessageConverter;
 import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
@@ -24,6 +27,7 @@ import java.util.List;
 @Configuration
 @EnableWebMvc
 @EnableTransactionManagement(proxyTargetClass = true)
+@EnableAspectJAutoProxy(proxyTargetClass = true)
 @ComponentScan("com.dikzz.service")
 public class ServiceConfiguration extends WebMvcConfigurerAdapter {
 
@@ -34,7 +38,7 @@ public class ServiceConfiguration extends WebMvcConfigurerAdapter {
 
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
-        registry.addWebRequestInterceptor(new TrackingInterceptor());
+//        registry.addWebRequestInterceptor(new TrackingInterceptor());
     }
 
 }

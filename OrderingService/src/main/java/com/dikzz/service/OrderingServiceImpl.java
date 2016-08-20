@@ -2,6 +2,7 @@ package com.dikzz.service;
 
 import com.dikzz.configuration.ZooKeeperRegistrar;
 import com.dikzz.domain.Order;
+import com.dikzz.service.preprocessors.ServiceLifecicle;
 import org.apache.zookeeper.ZooKeeper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -28,6 +29,9 @@ public class OrderingServiceImpl implements OrderingService {
     public static final Logger logger = LoggerFactory.getLogger(OrderingServiceImpl.class);
 
     private ZooKeeperRegistrar zooKeeperRegistrar;
+
+    @Autowired
+    ServiceLifecicle lifecicle;
 
     @Autowired
     public OrderingServiceImpl(ZooKeeperRegistrar zooKeeperRegistrar) {
