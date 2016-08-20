@@ -1,5 +1,7 @@
 package com.dikzz.configuration;
 
+import com.dikzz.service.filter.MyFilter;
+import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.EnableAspectJAutoProxy;
@@ -20,8 +22,12 @@ public class ApplicationConfiguration {
     }
 
     @Bean
-    public ZooKeeperRegistrar zooKeeperRegistrar() {
+    public ZooKeeperRegistrar zooKeeperRegistrar(ApplicationEventPublisher publisher) {
         return new ZooKeeperRegistrar();
+    }
+    @Bean
+    public MyFilter filter() {
+        return new MyFilter();
     }
 
 }
